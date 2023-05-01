@@ -343,7 +343,7 @@ for(let i=0; i<ars1.length; i++){
 
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById("box"));
-    let xData = getXdata(0);
+    let xData = getXdata();
     
     // 指定图表的配置项和数据
     var option = {
@@ -358,19 +358,19 @@ for(let i=0; i<ars1.length; i++){
         data: xData,
       },
       yAxis: {},
-      series: Score(index),
+      series: Score(),
  
     };
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
 
-    function getXdata(index) {
-      let res = arr1[index].result.map((item) => {
+    function getXdata() {
+      let res = arr1[0].result.map((item) => {
         return item.data;
       });
       return res;
     }
-    function Score(index) {
+    function Score() {
       return [
         {
           label: {
