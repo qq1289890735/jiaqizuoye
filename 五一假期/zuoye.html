@@ -301,9 +301,9 @@ for(let i=0; i<ars.length; i++){
          })
       }
       //显示数据
-      function fun(a=ars) {
+      function fun(ars) {
         let html = "";
-        [...a].forEach((item, index) => {
+        [...ars].forEach((item, index) => {
           html += `
           <tr>
           <td><input type="checkbox" name="${index}" id="" data-index="${index}"/></td>
