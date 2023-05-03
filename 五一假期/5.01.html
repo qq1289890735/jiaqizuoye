@@ -188,7 +188,7 @@ for(let i=0; i<ars1.length; i++){
         if (e.target.innerHTML == "删除") {
           if (confirm("确定删除吗")) {
             ars1.splice(index, 1);
-             localStorage.setItem('arr', JSON.stringify(ars))
+             localStorage.setItem('arr', JSON.stringify(ars1))
             fun(ars1);
           }
         }
@@ -282,7 +282,7 @@ for(let i=0; i<ars1.length; i++){
              
        }
     
-       localStorage.setItem('arr', JSON.stringify(ars))
+       localStorage.setItem('arr', JSON.stringify(ars1))
       fun(ars1)
    $("#box2").toggle();
        })
