@@ -347,7 +347,7 @@ for(let i=0; i<ars.length; i++){
     // 指定图表的配置项和数据
     var option = {
       title: {
-        text: `${ars[n].names}考试成绩`,
+        text: `${ars1[n].names}考试成绩`,
       },
       tooltip: {},
       legend: {
@@ -362,7 +362,6 @@ for(let i=0; i<ars.length; i++){
     };
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
-        console.log(getXdata(),1111111111);
     function getXdata() {
     
       let res = arr[0].result.map((item) => {
@@ -392,17 +391,13 @@ for(let i=0; i<ars.length; i++){
         },
       ];
     }
-    function sss(){
-     
-    }
-    console.log(sss());
     function chengji() {
-        let a=[ars[n].subject[0],ars[n].subject[2],ars[n].subject[4],ars[n].subject[6]]
+        let a=[ars1[n].subject[0],ars1[n].subject[2],ars1[n].subject[4],ars1[n].subject[6]]
      
       return a
     }
     function hengji() {
-  let a=[0,ars[n].subject[1],0,ars[n].subject[5]]
+  let a=[0,ars1[n].subject[1],0,ars1[n].subject[5]]
   
       return a;
     }
