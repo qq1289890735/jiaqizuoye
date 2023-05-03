@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.common.js"></script>
+  </head>
+  <body>
+    <!-- 创建一个容器用于显示图表 -->
+    <div id="chart" style="width: 800px; height: 400px"></div>
+
+    <script>
+      // 初始化 echarts 图表实例
+      var myChart = echarts.init(document.getElementById("chart"));
+      // 定义颜色列表
+      var colors = ["pink", "#5793f3", "#d14a61", "#675bba", "red"];
+
+      // 定义图表配置项
+      var option = {
+        // 定义 x 轴和 y 轴
+        xAxis: {
+          type: "value",
+        },
+        yAxis: {
+          type: "category",
+          data: ["中国", "美国", "德国", "英国", "印度"],
+        },
+        // 定义柱状图的样式和数据
+        series: [
+          {
+            label: {
+              show: true,
+              position: "right",
+            },
+            name: "销量",
+            type: "bar",
+            itemStyle: {
+              color: function (params) {
+                return colors[params.dataIndex % colors.length];
+              },
+            },
+            data: [15, 17, 14, 16, 20],
+            // 将柱状图变为横向显示
+            coordinateSystem: "cartesian2d",
+            encode: {
+              x: "data",
+              y: "value",
+            },
+          },
+        ],
+      };
+
+      // 使用 setOption 方法设置图表配置项
+      myChart.setOption(option);
+
+      // 定义动态数据
+      var data = [
+        { name: "中国", value: 15, speed: 65.0 },
+        { name: "美国", value: 17, speed: 60.0 },
+        { name: "德国", value: 14, speed: 58.0 },
+        { name: "英国", value: 16, speed: 64.0 },
+        { name: "印度", value: 20, speed: 63.4 },
+      ];
+
+      // 定义排序函数
+      function sortData(data, field, order) {
+        return data.slice().sort(function (a, b) {
+          if (order === "asc") {
+            return a[field] - b[field];
+          } else {
+            return b[field] - a[field];
+          }
+        });
+      }
+
+      // 定义初始排序方式和字段
+      var sortField = "value";
+      var sortOrder = "desc";
+
+      // 更新图表数据并重新渲染
+      setInterval(function () {
+        // 计算新的数据
+        for (var i = 0; i < data.length; i++) {
+          data[i].value += Math.floor(Math.random() * data[i].speed);
+        }
+
+        // 将数据排序
+        var sortedData = sortData(data, sortField, sortOrder);
+
+        // 更新图表数据
+        myChart.setOption({
+          yAxis: {
+            data: sortedData.map(function (item) {
+              return item.name;
+            }),
+          },
+          series: [
+            {
+              data: sortedData.map(function (item) {
+                return item.value;
+              }),
+            },
+          ],
+        });
+      }, 600); // 每1秒更新一次数据
+    </script>
+  </body>
+</html>
