@@ -157,8 +157,8 @@ function txFun(){
        
 let isContained = false; // 定义一个变量记录是否包含
 
-for(let i=0; i<ars.length; i++){
-  let obj = ars[i];
+for(let i=0; i<ars1.length; i++){
+  let obj = ars1[i];
   if(JSON.stringify(obj) === JSON.stringify(n[0])){ // 判断两个对象是否相等
     isContained = true;
     break; // 如果找到了就退出循环
@@ -171,10 +171,8 @@ for(let i=0; i<ars.length; i++){
        }else if(isContained == true){
         alert('学生信息已存在表格中')
        }else{
-               ars.push(n[0])
-        localStorage.setItem('arr', JSON.stringify(ars))
-         ars1=localStorage.getItem('arr')
-      ars1=JSON.parse(ars1)
+               ars1.push(n[0])
+        localStorage.setItem('arr', JSON.stringify(ars1))
         fun(ars1)
           $("#box1").toggle();
         }   
