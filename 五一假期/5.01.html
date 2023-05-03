@@ -189,9 +189,9 @@ for(let i=0; i<ars.length; i++){
         }
         if (e.target.innerHTML == "删除") {
           if (confirm("确定删除吗")) {
-            ars.splice(index, 1);
+            ars1.splice(index, 1);
              localStorage.setItem('arr', JSON.stringify(ars))
-            fun(ars);
+            fun(ars1);
           }
         }
         if (e.target.innerHTML == "编辑") {
@@ -271,21 +271,21 @@ for(let i=0; i<ars.length; i++){
       /><br /><br />
         <button type="submit" id="modify">修改</button>
                `)
-         $("#sd").val(ars[index].names)
+         $("#sd").val(ars1[index].names)
          let res;
       var inputs = $('input[name="us"]') // 获取所有 input 对象
-       for (var i = 0; i < ars[index].subject.length && i < inputs.length; i++) {
-    $(inputs[i]).val(ars[index].subject[i]); // 将 arr 中的值依次赋值给 input
+       for (var i = 0; i < ars1[index].subject.length && i < inputs.length; i++) {
+    $(inputs[i]).val(ars1[index].subject[i]); // 将 arr 中的值依次赋值给 input
           }
        //提交修改
        $("#modify").click(function(e){
-       for (var i = 0; i < ars[index].subject.length && i < inputs.length; i++) {
-             ars[index].subject[i]=+inputs[i].value 
+       for (var i = 0; i < ars1[index].subject.length && i < inputs.length; i++) {
+             ars1[index].subject[i]=+inputs[i].value 
              
        }
     
        localStorage.setItem('arr', JSON.stringify(ars))
-      fun(ars)
+      fun(ars1)
    $("#box2").toggle();
        })
         }
