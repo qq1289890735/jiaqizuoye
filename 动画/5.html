@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+    <style>
+      .swiper {
+        width: 1000px;
+        height: 500px;
+      }
+      .swiper-pagination {
+        position: absolute;
+        top: 93%;
+        left: 20% !important;
+        z-index: 3;
+      }
+      img {
+        width: 200px;
+      }
+      .swiper-pagination-bullet {
+        width: 30px;
+      }
+      #box {
+        width: 850px;
+        height: 50px;
+        background-color: rgb(247, 243, 243, 0.5);
+        position: absolute;
+        top: 80%;
+        left: 27%;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <img
+          src="https://img0.baidu.com/it/u=1604010673,2427861166&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=889"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img2.baidu.com/it/u=52074741,663093781&fm=253&fmt=auto&app=138&f=JPEG?w=1083&h=500"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img1.baidu.com/it/u=3275625240,2100682725&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=666"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img0.baidu.com/it/u=1263678349,2467800801&fm=253&fmt=auto&app=138&f=JPEG?w=1083&h=500"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img1.baidu.com/it/u=1148970554,2605361407&fm=253&fmt=auto&app=138&f=JPEG?w=1083&h=500"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img2.baidu.com/it/u=1010923620,1981866404&fm=253&fmt=auto&app=138&f=JPEG?w=1083&h=500"
+          alt=""
+          class="swiper-slide"
+        />
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <div id="box"></div>
+  </body>
+  <script>
+    var mySwiper = new Swiper(".swiper", {
+      autoplay: true,
+      direction: "horizontal", // 垂直切换选项
+      //   loop: true, // 循环模式选项
+
+      // 如果需要分页器
+      pagination: {
+        el: ".swiper-pagination",
+        // type: "custom",
+      },
+
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</html>

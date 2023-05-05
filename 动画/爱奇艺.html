@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 70%;
+        height: 60%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <img
+          src="https://img0.baidu.com/it/u=3541822974,1895761368&fm=253&fmt=auto&app=138&f=JPEG?w=890&h=500"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          class="swiper-slide"
+          src="https://img1.baidu.com/it/u=783444696,2951375420&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"
+          alt=""
+        />
+        <img
+          src="https://img0.baidu.com/it/u=4018961009,3023342154&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=886"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img0.baidu.com/it/u=4026333022,3425967195&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=707"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img2.baidu.com/it/u=2339330905,1479040314&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=682"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img0.baidu.com/it/u=198420858,3450993079&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img1.baidu.com/it/u=2609672530,1731474152&fm=253&fmt=auto&app=138&f=JPG?w=500&h=297"
+          alt=""
+          class="swiper-slide"
+        />
+        <img
+          src="https://img1.baidu.com/it/u=2609672530,1731474152&fm=253&fmt=auto&app=138&f=JPG?w=500&h=297"
+          alt=""
+          class="swiper-slide"
+        />
+      </div>
+      <!-- <div class="swiper-pagination"></div> -->
+    </div>
+
+    <!-- Swiper JS -->
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+      // 如果需要前进后退按钮
+    </script>
+  </body>
+</html>
